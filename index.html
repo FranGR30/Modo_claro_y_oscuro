@@ -60,22 +60,20 @@
 
     <script>
         $(document).ready(function(){
-            // Modo Claro
             $("#modoClaro").click(function(){
                 $("body").removeClass("bg-dark text-white").addClass("bg-light text-dark");
                 $("nav").removeClass("navbar-dark bg-dark").addClass("navbar-light bg-primary");
                 $("h1").removeClass("text-white").addClass("text-primary");
-                $("table").removeClass("table-dark"); // Remueve el fondo oscuro de la tabla
-                $("tbody").find("tr, td").removeClass("text-white"); // Remueve el texto blanco en las filas y celdas de la tabla
+                $("table").removeClass("table-dark"); 
+                $("tbody").find("tr, td").removeClass("text-white");
             });
 
-            // Modo Oscuro
             $("#modoOscuro").click(function(){
                 $("body").removeClass("bg-light text-dark").addClass("bg-dark text-white");
                 $("nav").removeClass("navbar-light bg-primary").addClass("navbar-dark bg-dark");
                 $("h1").removeClass("text-primary").addClass("text-white");
-                $("table").addClass("table-dark"); // Añade fondo oscuro a la tabla
-                $("tbody").find("tr, td").addClass("text-white"); // Añade texto blanco en las filas y celdas de la tabla
+                $("table").addClass("table-dark"); 
+                $("tbody").find("tr, td").addClass("text-white");
             });
         });
     </script>
