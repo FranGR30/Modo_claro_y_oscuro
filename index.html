@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Claro y Oscuro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-light text-dark">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand text-white" href="#">Mi Página</a>
+        <div class="ml-auto">
+            <button id="modoClaro" class="btn btn-light">Modo Claro</button>
+            <button id="modoOscuro" class="btn btn-dark">Modo Oscuro</button>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-primary text-center">Bienvenido a Mi Página Web</h1>
+
+        <div class="text-center my-4">
+            <img src="code.jpg" class="img-fluid rounded" style="max-height: 400px;" alt="Imagen de ejemplo">
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Ciudad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Juan</td>
+                        <td>28</td>
+                        <td>Buenos Aires</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>María</td>
+                        <td>24</td>
+                        <td>Córdoba</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Carlos</td>
+                        <td>35</td>
+                        <td>Rosario</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // Modo Claro
+            $("#modoClaro").click(function(){
+                $("body").removeClass("bg-dark text-white").addClass("bg-light text-dark");
+                $("nav").removeClass("navbar-dark bg-dark").addClass("navbar-light bg-primary");
+                $("h1").removeClass("text-white").addClass("text-primary");
+                $("table").removeClass("table-dark"); // Remueve el fondo oscuro de la tabla
+                $("tbody").find("tr, td").removeClass("text-white"); // Remueve el texto blanco en las filas y celdas de la tabla
+            });
+
+            // Modo Oscuro
+            $("#modoOscuro").click(function(){
+                $("body").removeClass("bg-light text-dark").addClass("bg-dark text-white");
+                $("nav").removeClass("navbar-light bg-primary").addClass("navbar-dark bg-dark");
+                $("h1").removeClass("text-primary").addClass("text-white");
+                $("table").addClass("table-dark"); // Añade fondo oscuro a la tabla
+                $("tbody").find("tr, td").addClass("text-white"); // Añade texto blanco en las filas y celdas de la tabla
+            });
+        });
+    </script>
+
+</body>
+</html>
